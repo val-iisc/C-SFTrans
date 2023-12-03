@@ -1,11 +1,11 @@
-# C-SFTrans
+# Nerfies
 
-This is the repository that contains source code for our [C-SFTrans website](https://val.cds.iisc.ac.in/DSiT-SFDA/).
+This is the repository that contains source code for the [C-SFTrans website](https://val.cds.iisc.ac.in/C-SFTrans/).
 
-If you find our work useful in your research please cite:
+If you find Nerfies useful for your work please cite:
 ```
 @article{sanyal2024aligning,
-  author    = {Sanyal, Sunandini and Ramayee Asokan, Ashish and Bhambri, Suvaansh and YM, Pradyumna and Kulkarni, Akshay and Kundu, Jogendra Nath and Radhakrishnan, Venkatesh Babu},
+  author    = {Sanyal, Sunandini and Asokan, Ashish Ramayee and Bhambri, Suvaansh and Kulkarni, Akshay and Kundu, Jogendra Nath and Babu, R Venkatesh},
   title     = {Aligning Non-Causal Factors for Transformer-based Source-Free Domain Adaptation},
   journal   = {WACV},
   year      = {2024},

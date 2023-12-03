@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Aligning Non-Causal Factors for Transformer-based Source-Free Domain Adaptation">
-  <meta name="keywords" content="Domain Adaptation, Source-Free, ViT">
+  <meta name="description" content="Source-Free DA with Vision Transformers">
+  <meta name="keywords" content="C-SFTrans, SFDA, ViT">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>C-SFTrans</title>
+  <title>C-SFTrans for SFDA</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -37,30 +37,36 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+    };
+  </script>
+
 </head>
 
 <body>
-
 
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Aligning Non-Causal Factors for Transformer-based Source-Free
+            <h1 class="title is-2 publication-title">Aligning Non-Causal Factors for Transformer-based Source-Free
               Domain Adaptation</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=E59fLgMAAAAJ&hl=en">Sunandini
                   Sanyal</a><sup>*</sup>,</span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=MXB6jaMAAAAJ&hl=en">Ashish Ramayee
-                  Asokan</a><sup>*</sup>,</span>
+                <a href="https://utkarshsinha.com">Ashish Ramayee Asokan</a><sup>*</sup>,</span>
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=UQjAvO8AAAAJ&hl=en">Suvaansh Bhambri</a>,
               </span>
               <span class="author-block">
-                <a href="">Pradyumna YM</a>,
+                <a href="https://scholar.google.com/citations?user=lR0lq_4AAAAJ&hl=en">Pradyumna YM</a>,
               </span>
               <span class="author-block">
                 <a href="https://akshayk07.weebly.com/">Akshay Kulkarni</a>,
@@ -69,66 +75,64 @@
                 <a href="https://sites.google.com/view/jogendra/">Jogendra Nath Kundu</a>,
               </span>
               <span class="author-block">
-                <a href="http://cds.iisc.ac.in/faculty/venky/">R Venkatesh Babu</a>,
+                <a href="https://cds.iisc.ac.in/faculty/venky/">R. Venkatesh Babu</a>
               </span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Vision and AI Lab, Indian Institute of Science, Bangalore</span>
+              <span class="author-block">Vision and AI Lab, Indian Institute of Science</span><br>
+              <span class="author-block"><small>(* indicates equal contribution)</small></span>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
-                <ul class="navUL">
-                  <li>
-
-                    <!-- PDF Link. -->
-                    <span class="link-block">
-                      <a href="https://openaccess.thecvf.com/content/ICCV2023/html/Sanyal_Domain-Specificity_Inducing_Transformers_for_Source-Free_Domain_Adaptation_ICCV_2023_paper.html"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
                     </span>
-
-                    <!-- arXiv link -->
-                    <span class="link-block">
-                      <a href="http://arxiv.org/abs/2308.14023"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="ai ai-arxiv"></i>
-                        </span>
-                        <span>arXiv</span>
-                      </a>
+                    <span>Paper</span>
+                    <span class="icon">
+                      <i class="far fa-clock"></i>
                     </span>
-
-                    <!-- Video Link. -->
-                    <span class="link-block">
-                      <a href="" class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon"> <i class="fab fa-youtube"></i> </span>
-                        <span>Video</span>
-                        <div class="bubblePosition hoverBubble">
-                          <p>Coming Soon!</p>
-                        </div>
-                      </a>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2311.16294v1"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
                     </span>
-
-                    <!-- Code Link. -->
-                    <span class="link-block">
-                      <a href="https://github.com/val-iisc/DSiT-SFDA"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fab fa-github"></i>
-                        </span>
-                        <span>Code</span>
-                      </a>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-image"></i>
                     </span>
-                  </li>
-                </ul>
+                    <span>Poster</span>
+                    <span class="icon">
+                      <i class="far fa-clock"></i>
+                    </span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="git@github.com:val-iisc/C-SFTrans.git"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
               </div>
-
+              <p><span class="icon">
+                  <i class="far fa-clock"></i>
+                </span> &#8594 Coming Soon!</p>
             </div>
           </div>
         </div>
@@ -136,114 +140,170 @@
     </div>
   </section>
 
-  <section class="section">
 
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-three-fifths">
-        <h2 class="title is-3">Overview</h2>
-        <div class="content has-text-justified">
-          We analyze Source-Free Domain Adaptation (SFDA) from the perspective of domain specificity, and
-          show that disentangling and learning the domain-specific and task-specific factors in a Vision Transformer
-          (ViT) architecture leads to improved target adaptation.
-        </div>
-        </p>
-        <!-- <div class="publication-video">
-        <img src="./static/images/main_teaser.png"
-                 class="interpolation-image"
-                 alt="Main Teaser image."/>
-      </div> -->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <figure>
-              <img src="./static/images/main_teaser.png" class="interpolation-image"
-                alt="Interpolate start reference image." />
-              <figcaption>Fig.1 - <b>A.</b> Overview of the proposed framework. <b>B.</b> Conventional DA methods
-                preserve domain-invariance, resulting in only task-oriented clusters in the feature space. <b>C.</b>
-                Our proposed disentanglement ensures that different domains are well-clustered.</figcaption>
-            </figure>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img id="overview" src="./static/images/CSFT_Teaser.png">
+        <h2 class="subtitle has-text-centered">
+          <b>A. Proposed method.</b> We incorporate non-causal factors to learn domain-invariant representations
+          using
+          a subsidiary non-causal factor classification task. <b>B. w/o Non-Causal Factor Alignment.</b> Conventional
+          domain-invariance
+          methods aim to align only causal factors, leading to sub-optimal alignment between the source and target
+          domain. <b>C. w/ Non-Causal Factor Alignment.</b>
+          Non-causal factor alignment improves global alignment, leading to better task-discriminative causal factor
+          alignment.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="hero is-light is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <br>
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Conventional domain adaptation algorithms aim to achieve better generalization by
+              aligning only the task-discriminative causal factors between a source and target domain.
+              However, we find that retaining the spurious correlation between causal and non-causal
+              factors plays a vital role in bridging the domain gap and improving target adaptation.
+              Therefore, we propose to build a framework that disentangles and supports causal factor
+              alignment by aligning the non-causal factors first. We also investigate and find that the
+              strong shape bias of vision transformers, coupled with its multi-head attention, make it
+              a suitable architecture for realizing our proposed disentanglement. Hence, we propose to
+              build a Causality-enforcing Source-Free Transformer framework (C-SFTrans) to achieve
+              disentanglement via a novel two-stage alignment approach: a) non-causal factor alignment:
+              non-causal factors are aligned using a style classification task which leads to an overall
+              global alignment, b) task-discriminative causal factor alignment: causal factors are aligned
+              via target adaptation. We are the first to investigate the role of vision transformers (ViTs)
+              in a privacy-preserving source-free setting. Our approach achieves state-of-the-art results in
+              several DA benchmarks.
+            </p>
+            <br>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- <div class="container is-max-desktop"> -->
-    <!-- Abstract. -->
+  <section id="video" class="hero teaser">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-three-fifths">
-        <h2 class="title is-3">Abstract</h2>
+      <div class="column is-four-fifths">
+        <br>
+        <h2 class="title is-3">Exploring Domain Invariance in ViTs</h2>
+      </div>
+    </div>
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img id="overview" src="./static/images/insights.png">
+        <h2 class="subtitle has-text-centered">
+          <b>A.</b>
+          SOTA domain-invariance-based DA works, Feature-Mixup (ICML 2022) and DIPE (CVPR 2022), do not improve over the
+          baseline for vision transformers despite large gains for CNNs.
+          <b>B.</b> We observe that correlation $S$ and $Z$ in preserved after target adaptation. (Office-Home)
+          <b>C.</b> With our proposed style task training, the overall source-target domain gap (pink) is lower
+          indicating better domain-invariance. Further, we observe a lower domain gap considering only causal factors
+          (yellow) indicating that non-causal alignment helps causal alignment.
+          <b>D.</b> Causal Graph representing causal factors $S$ and non-causal factors $Z$, which are spuriously
+          correlated via confounder $C$.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="video" class="hero teaser is-light">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <br>
+        <h2 class="title is-3">Proposed Method</h2>
+      </div>
+    </div>
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img id="overview" src="./static/images/proposed_approach.png">
         <div class="content has-text-justified">
-          Conventional Domain Adaptation (DA) methods aim to learn domain-invariant feature
-          representations to improve the target adaptation performance. However, we motivate
-          that domain-specificity is equally important since in-domain trained models hold
-          crucial domain-specific properties that are beneficial for adaptation. Hence, we propose
-          to build a framework that supports disentanglement and learning of domain-specific
-          factors and task-specific factors in a unified model. Motivated by the success of
-          vision transformers in several multi-modal vision problems, we find that queries could
-          be leveraged to extract the domain-specific factors. Hence, we propose a novel
-          Domain-Specificity inducing Transformer (DSiT) framework for disentangling and learning
-          both domain-specific and task-specific factors. To achieve disentanglement, we propose to
-          construct novel Domain-Representative Inputs (DRI) with domain-specific information to train
-          a domain classifier with a novel domain token. We are the first to utilize vision transformers
-          for domain adaptation in a privacy-oriented source-free setting, and our approach achieves
-          state-of-the-art performance on single-source, multi-source, and multi-target benchmarks.
+          <ul>
+            <li>
+              We estimate the causal importance of each attention head in a block by training convex weights $\beta_1$
+              and
+              $\beta_2$ that combine the output of the attention heads for normal input $x$ and style characterizing
+              input
+              $x_{SCI}$. A higher $\beta_2$ indicates that the attention head gave more importance to non-causal style
+              factors and can be chosen as a non-causal head.
+            </li>
+            <li>
+              The selected non-causal heads $h_n$ are updated to train the style classifier $f_n$ with the style
+              classification loss $\mathcal{L}_{style}$ via a style token $z_n$. The task classifier is trained by
+              updating only causal heads $\mathcal{H}\!\setminus\!h_n$ with the task classification loss
+              $\mathcal{L}_{cls}$ via the class token $z_c$. The two steps are executed alternately.
+            </li>
+          </ul>
+          <br>
         </div>
       </div>
     </div>
+  </section>
 
+
+  <section id="video" class="hero teaser">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-three-fifths">
-        <h2 class="title is-3">Proposed Approach</h2>
-        <figure>
-          <img src="./static/images/proposed_approach.png" class="interpolation-image"
-            alt="Interpolate start reference image." />
-          <figcaption>Fig.2 <b>DSiT Training</b> - <b>A.</b> Creating Domain Representative Inputs (DRI) <b>B.</b>
-            Domain-Specificity Disentanglement for the domain classification task <b>C.</b> Goal Task training.
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-
-
-    <!-- Results -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-three-fifths">
+      <div class="column is-four-fifths">
+        <br>
         <h2 class="title is-3">Main Results</h2>
       </div>
     </div>
-    <div class="columns is-centered">
-      <div class="column is-three-fifths">
-        <h4 class="title is-5">1. Single-source DA on Office-Home </h4>
-        <div class="columns is-centered has-text-centered">
-          <figure>
-            <img src="./static/images/oh_ssda.png" class="interpolation-image" alt="oh_results" />
-            <figcaption> <b>Table 1.</b> Results on the Office-Home dataset. ResNet-based results (top) and ViT-based
-              results (bottom).</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-three-fifths">
-        <h4 class="title is-5">2. Single-source DA on Office-31 and VisDA </h4>
-        <div class="columns is-centered has-text-centered">
-          <figure>
-            <img src="./static/images/o31_visda.png" class="interpolation-image" alt="oh_results" />
-            <figcaption> <b>Table 2.</b> Results on the Office-31 and VisDA datasets. ResNet-based results (top) and
-              ViT-based results (bottom).</figcaption>
-          </figure>
-        </div>
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img id="overview" src="./static/images/oh_table.png">
+        <h2 class="subtitle has-text-centered">
+          <b>Table 1.</b> Single-Source Domain Adaptation (SSDA) on Office-Home benchmark. SF denotes
+          <i>source-free</i> adaptation.
+          ResNet-based methods (top) and Transformer-based methods (bottom).
+          * indicates results taken from CDTrans (ICML 2021).
+        </h2>
       </div>
     </div>
 
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img id="overview" src="./static/images/o31_visda_table.png">
+        <h2 class="subtitle has-text-centered">
+          <b>Table 2.</b> Single-Source Domain Adaptation (SSDA) on the VisDA benchmark. SF denotes
+          <i>source-free</i> adaptation.
+          ResNet-based methods (top) and Transformer-based methods (bottom).
+          * indicates results taken from CDTrans (ICML 2021).
+        </h2>
+      </div>
+    </div>
 
-    <!-- <section class="section" id="BibTeX"> -->
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img id="overview" src="./static/images/dnet_table.png">
+        <h2 class="subtitle has-text-centered">
+          <b>Table 3.</b> Single-Source Domain Adaptation (SSDA) on the DomainNet benchmark. SF denotes
+          <i>source-free</i> adaptation. * indicates results taken from SSRT (CVPR 2022).
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title">Citing our work</h2>
-      <pre><code>@article{sanyal2023dsit,
-  author    = {Sanyal, Sunandini and Ramayee Asokan, Ashish and Bhambri, Suvaansh and Kulkarni, Akshay and Kundu, Jogendra Nath and Radhakrishnan, Venkatesh Babu},
-  title     = {Domain-Specificity-inducing Transformers for Source-Free Domain Adaptation},
-  journal   = {ICCV},
-  year      = {2023},
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{sanyal2024aligning,
+  author    = {Sanyal, Sunandini and Asokan, Ashish Ramayee and Bhambri, Suvaansh and Kulkarni, Akshay and Kundu, Jogendra Nath and Babu, R Venkatesh},
+  title     = {Aligning Non-Causal Factors for Transformer-based Source-Free Domain Adaptation},
+  journal   = {WACV},
+  year      = {2024},
 }</code></pre>
     </div>
   </section>
@@ -276,6 +336,7 @@
       </div>
     </div>
   </footer>
+
 </body>
 
 </html>
